@@ -16,6 +16,7 @@ public class CheckGuest {
         scanner.close();
 
                             // METODO 1: CICLO FOR
+                            
             for (int i = 0; i < listaInvitati.length; i++);
 
                 if (name.equals("Dua Lipa")) {
