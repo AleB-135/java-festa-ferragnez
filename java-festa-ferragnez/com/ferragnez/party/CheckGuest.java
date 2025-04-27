@@ -12,9 +12,12 @@ import java.util.Scanner;
  
          System.out.println("Inserisci il tuo nome");
          String name = scanner.nextLine();
+
+         boolean invitatoInLista = false;
  
          scanner.close();
  
+        /*
                              // METODO 1: CICLO FOR
                              
              for (int i = 0; i < listaInvitati.length; i++);
@@ -54,7 +57,21 @@ import java.util.Scanner;
  
                  } else
                      System.out.println("Non sei sulla lista. Non puoi entrare.");
- 
+
+        */
+
+                                // METODO UNO : CICLO FOR CORRETTO
+
+            for (int i = 0; i < listaInvitati.length; i++) {
+                System.out.println("Ricerco il nome sulla lista che corrisponda a: " + listaInvitati[i]);
+                if (name.trim().equalsIgnoreCase(listaInvitati[i])) {
+                    invitatoInLista = true;
+                    break;
+                } 
+
+            }
+
+
                                  // METODO DUE: CICLO WHILE
              /* 
              int i = 0;
@@ -107,7 +124,31 @@ import java.util.Scanner;
                      System.out.println("Non sei sulla lista. Non puoi entrare.");
                      break;
              } 
+
+
              */
+                                        // METODO DUE: CICLO WHILE CORRETTO
+            
+            /*int index = 0;
+
+            while (!invitatoInLista && index < listaInvitati.length) {
+                System.out.println("Ricerco il nome sulla lista che corrisponda a: " + listaInvitati[index]);
+                if (name.trim().equalsIgnoreCase(listaInvitati[index])) {
+                    invitatoInLista = true;
+            }
+            
+            index++;
+            
+        }
+            */  
+             
+             
+             
+            if (invitatoInLista) {
+                System.out.println("Sei sulla lista. Diveriti " + name + "!");
+             } else {
+                System.out.println("Non sei sulla lista. Non puoi entrare.");
+             }
      }
  
  
